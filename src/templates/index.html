@@ -1,18 +1,9 @@
-<DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Babble</title>
-</head>
-<body>
-		{% for babble in babbles %}
-		<div id='{{babble._id}}' class='tweet'>
-			<p>{{babble.text}}</p>
-		</div>
-	{% else %}
-		<p> No babbles brah </p>
-	{% endfor %}
-
-	Babble: <input id='babble-text' type='babble' name='babble'>
-	<button id='add-babble'>Babble!</button>
-
-</body>
+{% block body %}
+<form class="ui form" action="/shortify" method="post">
+	<div class="field">
+		<label>Input URL</label>
+		<input type="text" name="input" placeholder="paste your URL here"
+	</div>
+	<button class="ui button" type="submit">Submit</button>
+</form>
+{% endblock %}
